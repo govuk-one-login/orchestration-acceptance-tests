@@ -1,0 +1,15 @@
+.gradle/
+.idea/
+.vscode/
+build/
+logs/
+.classpath
+.project
+.settings/
+bin/
+.env
+*.bat
+!gradlew.bat
+node_modules/
+target/
+.DS_Store

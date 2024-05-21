@@ -1,0 +1,70 @@
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+def dependencyVersions = [
+        junit_version: '5.9.0',
+        cucumber_version: '7.8.1',
+        axe_version: '3.0',
+        json_version: '20220320',
+        selenium_java_version: '4.5.0'
+]
+
+dependencies {
+    testImplementation "io.cucumber:cucumber-java:${dependencyVersions.cucumber_version}",
+                       "io.cucumber:cucumber-junit:${dependencyVersions.cucumber_version}",
+                       "org.seleniumhq.selenium:selenium-java:${dependencyVersions.selenium_java_version}",
+                       "org.junit.jupiter:junit-jupiter-api:${dependencyVersions.junit_version}",
+                       "commons-codec:commons-codec:1.15","io.github.cdimascio:java-dotenv:5.2.2",
+                       "commons-codec:commons-codec:1.15"
+
+    testImplementation group: 'com.deque', name: 'axe-selenium', version:"${dependencyVersions.axe_version}"
+    testImplementation group: 'org.json', name: 'json', version:"${dependencyVersions.json_version}"
+
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${dependencyVersions.junit_version}"
+}
+
+group = 'acceptance-tests'
+version = '1.0.0'
+description = 'acceptance-tests'
+
+java.sourceCompatibility = JavaVersion.VERSION_17
+java.targetCompatibility = JavaVersion.VERSION_17
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+task cucumber() {
+    dependsOn assemble, testClasses
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'json:target/cucumber-report/report.json', '--plugin', 'html:target/cucumber-report/index.html', '--plugin', 'pretty', '--glue', 'uk.gov.di.test.step_definitions', '--tags', '@Orchestration', 'src/test/resources']
+        }
+    }
+}
