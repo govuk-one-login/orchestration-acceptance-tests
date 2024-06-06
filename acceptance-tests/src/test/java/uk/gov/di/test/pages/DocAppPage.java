@@ -10,7 +10,6 @@ public class DocAppPage extends BasePage {
 
     By idToken = By.id("user-info-phone-number");
 
-
     public void enterPayLoad(String jsonPayLoad) {
         driver.findElement(payloadInputField).sendKeys(jsonPayLoad);
     }
