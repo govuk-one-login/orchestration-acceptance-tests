@@ -10,8 +10,10 @@ function get_env_vars_from_SSM() {
     VAR_NAME="$(echo ${VAR} | base64 -d | jq -r '.Name / "/" | .[3]')"
     export "$VAR_NAME"="$(echo ${VAR} | base64 -d | jq -r '.Value')"
   done
-  echo "Exported SSM parameters completed."
+  echo "Export SSM parameters completed."
 }
+
+cd /test
 
 # Start the selenium server
 /opt/bin/entry_point.sh &

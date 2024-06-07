@@ -8,5 +8,6 @@ COPY . /test
 RUN sudo chmod -R a+rwx /test
 WORKDIR /test
 RUN /test/gradlew -Dorg.gradle.java.home=/usr/lib/jvm/java-17-openjdk-amd64 clean build :acceptance-tests:compileTestJava -x :acceptance-tests:test
-
-CMD ["/test/run-tests.sh"]
+COPY run-tests.sh /
+WORKDIR /
+CMD ["/run-tests.sh"]
