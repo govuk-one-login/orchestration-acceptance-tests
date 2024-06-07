@@ -1,0 +1,15 @@
+name: Build image on PR
+
+on:
+  pull_request:
+
+jobs:
+  build-on-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Build image
+        run: docker buildx build --cache-to type=gha,mode=max --cache-from type=gha .
+
