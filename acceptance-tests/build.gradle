@@ -64,7 +64,7 @@ task cucumber() {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'json:target/cucumber-report/report.json', '--plugin', 'html:target/cucumber-report/index.html', '--plugin', 'pretty', '--glue', 'uk.gov.di.test.step_definitions', '--tags', '@Orchestration', 'src/test/resources']
+            args = ['--plugin', 'json:target/cucumber-report/report.json', '--plugin', 'html:target/cucumber-report/index.html', '--plugin', 'pretty', '--glue', 'uk.gov.di.test.step_definitions', 'src/test/resources']
         }
     }
 }
