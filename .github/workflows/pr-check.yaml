@@ -2,6 +2,7 @@ name: Build image on PR
 
 on:
   pull_request:
+  merge_group:
 
 jobs:
   build-on-pr:
