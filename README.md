@@ -19,3 +19,8 @@ This is referenced from the Orchestration API deploy pipeline, defined at https:
 
 The documentation [here](https://govukverify.atlassian.net/wiki/spaces/PLAT/pages/3054010402/How+to+run+tests+against+your+deployed+application+in+a+SAM+deployment+pipeline)
 describes the requirements of the image and how it is invoked. The full pipeline definition can be found at https://github.com/govuk-one-login/devplatform-deploy/blob/main/sam-deploy-pipeline/template.yaml.
+
+### Configuration
+These run in the Orchestration Build account. They fetch their configuration from SSM parameters in that account. The names of these parameters have the prefix `/tests/build-orch-be-deploy/`, as per https://github.com/govuk-one-login/orchestration-acceptance-tests/blob/main/run-tests.sh#L8C67-L8C95
+
+The pipeline is configured to produce a test report, which is the best place to look for details of any failures. These reports can be a little tricky to find, so the #di-orch-developers slack channel has a bookmark to them at the top.
