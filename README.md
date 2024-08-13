@@ -10,6 +10,13 @@ Prerequisites:
 - Docker
 - AWS CLI
 - AWS profiles set up per https://github.com/govuk-one-login/authentication-api/blob/main/scripts/set-up-sso.sh
+- Docker Desktop v4.25+, with `Use Rosetta for x86_64/amd64 emulation on Apple Silicon` turned on in settings
+
+To log into the correct AWS account, run
+```
+export AWS_PROFILE=di-orchestration-build-admin
+aws sso login
+```
 
 You can then run `./run-local.sh`
 
