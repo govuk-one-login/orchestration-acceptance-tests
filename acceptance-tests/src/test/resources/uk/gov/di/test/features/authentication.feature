@@ -19,6 +19,6 @@ Feature: Authentication
     Then the user is taken to the "Enter your password" page
     When the user enters their password
     Then the user is returned to the service
-    When the user closes their browser
+    When the user closes and reopens their browser
     And the user comes from the stub relying party with options: "2fa-off"
     Then the user is taken to the "Create your GOV.UK One Login or sign in" page
