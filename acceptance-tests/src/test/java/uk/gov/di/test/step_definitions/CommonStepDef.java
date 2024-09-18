@@ -5,6 +5,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import uk.gov.di.test.pages.BasePage;
 
+import java.net.MalformedURLException;
+
 public class CommonStepDef extends BasePage {
     @Then("the user is taken to the {string} page")
     public void theUserIsTakenToThePage(String pageTitle) {
@@ -26,5 +28,11 @@ public class CommonStepDef extends BasePage {
     public void theUserLogsOut() {
         findAndClickButtonByText("Log out");
         waitForPageLoad("Signed out");
+    }
+
+    @When("the user closes and reopens their browser")
+    public void theUserClosesAndReopnsTheirBrowser() throws MalformedURLException {
+        closeWebdriver();
+        setupWebdriver();
     }
 }
