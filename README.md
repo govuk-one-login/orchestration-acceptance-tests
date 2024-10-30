@@ -1,4 +1,4 @@
-# Orchestration acceptance tests
+# Orchestration acceptance tests.
 
 These are selenium tests written to run during the deployment pipeline. 
 They cover the most critical interactions of Orchestration and are the tip of the testing pyramid.
