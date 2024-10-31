@@ -11,5 +11,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build image
-        run: docker buildx build --cache-to type=gha,mode=max --cache-from type=gha .
+        run: docker buildx . build --cache-to type=gha,mode=max --cache-from type=gha --file docker/build-env.Dockerfile
 

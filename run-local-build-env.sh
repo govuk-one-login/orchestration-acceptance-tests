@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker build . -t orchestration-acceptance-test
+docker build . -t orchestration-acceptance-test --file docker/build-env.Dockerfile
 eval $(aws configure export-credentials --profile di-orchestration-build-admin --format env)
 docker run \
   -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
