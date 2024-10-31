@@ -18,7 +18,17 @@ export AWS_PROFILE=di-orchestration-build-admin
 aws sso login
 ```
 
-You can then run `./run-local.sh`
+You can then run `./run-local.sh`.
+
+## Running locally with local environment
+Prerequisites:
+- An account on build (go to https://rp-build.build.stubs.account.gov.uk/ to make one)
+- Docker
+- Docker Desktop v4.25+, with `Use Rosetta for x86_64/amd64 emulation on Apple Silicon` turned on in settings
+
+Copy the `.env.sample` file to `.env` and add your credentials.
+
+You can then run `./run-local-local-env.sh`. This will run the tests with your own environment variables.
 
 ## Running in the pipeline
 A GitHub action builds the container image and pushes it to an ECR repository in the Build account upon push to main.
