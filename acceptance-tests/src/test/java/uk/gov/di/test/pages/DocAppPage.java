@@ -10,7 +10,16 @@ public class DocAppPage extends BasePage {
 
     By idToken = By.id("user-info-phone-number");
 
+    By strength = By.id("strength");
+
+    By validity = By.id("validity");
+
+    By activityHistory = By.id("activityHistory");
+
+    By verification = By.id("verification");
+
     public void enterPayLoad(String jsonPayLoad) {
+
         driver.findElement(payloadInputField).sendKeys(jsonPayLoad);
     }
 
@@ -24,5 +33,12 @@ public class DocAppPage extends BasePage {
 
     public Boolean idTokenDisplayed() {
         return driver.findElement(idToken).isDisplayed();
+    }
+
+    public void enterEvidence(String strengthValue, String validityValue, String activityHistoryValue, String verificationValue) {
+        driver.findElement(strength).sendKeys(strengthValue);
+        driver.findElement(validity).sendKeys(validityValue);
+        driver.findElement(activityHistory).sendKeys(activityHistoryValue);
+        driver.findElement(verification).sendKeys(verificationValue);
     }
 }
