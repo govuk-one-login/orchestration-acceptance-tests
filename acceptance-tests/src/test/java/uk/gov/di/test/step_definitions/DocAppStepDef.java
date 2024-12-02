@@ -26,6 +26,7 @@ public class DocAppStepDef extends BasePage {
     public void theUserSendsAValidJsonPayload() {
         jsonPayLoad = "{\"test\" : \"example\"}";
         docAppPage.enterPayLoad(jsonPayLoad);
+        docAppPage.enterEvidence("3", "2", "1", "3");
         docAppPage.clickSubmitButton();
     }
 
