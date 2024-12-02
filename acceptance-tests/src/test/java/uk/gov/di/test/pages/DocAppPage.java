@@ -35,7 +35,11 @@ public class DocAppPage extends BasePage {
         return driver.findElement(idToken).isDisplayed();
     }
 
-    public void enterEvidence(String strengthValue, String validityValue, String activityHistoryValue, String verificationValue) {
+    public void enterEvidence(
+            String strengthValue,
+            String validityValue,
+            String activityHistoryValue,
+            String verificationValue) {
         driver.findElement(strength).sendKeys(strengthValue);
         driver.findElement(validity).sendKeys(validityValue);
         driver.findElement(activityHistory).sendKeys(activityHistoryValue);
