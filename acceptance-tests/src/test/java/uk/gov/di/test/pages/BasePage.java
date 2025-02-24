@@ -83,8 +83,11 @@ public class BasePage {
     }
 
     protected void waitForPageLoad(String titleContains) {
-        new WebDriverWait(driver, DEFAULT_PAGE_LOAD_WAIT_TIME)
-                .until(ExpectedConditions.titleContains(titleContains));
+        waitForPageLoad(titleContains, DEFAULT_PAGE_LOAD_WAIT_TIME);
+    }
+
+    protected void waitForPageLoad(String titleContains, Duration timeout) {
+        new WebDriverWait(driver, timeout).until(ExpectedConditions.titleContains(titleContains));
         waitForReadyStateComplete();
     }
 
