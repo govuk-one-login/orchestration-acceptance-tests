@@ -26,7 +26,9 @@ Prerequisites:
 - Docker
 - Docker Desktop v4.25+, with `Use Rosetta for x86_64/amd64 emulation on Apple Silicon` turned on in settings
 
-Copy the `.env.sample` file to `.env` and add your credentials.
+Copy the `.env.sample` file to `.env` and add the credentials of a valid test account. 
+
+Note that the identity tests expect that a test account is used, which uses a fixed OTP. The easiest way to run these locally is to get the credentials and the fixed OTP that the acceptance tests use from AWS, and set them in the `.env` file.
 
 You can then run `./local-env/run-local-env.sh`. This will run the tests with your own environment variables.
 
