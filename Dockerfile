@@ -1,7 +1,7 @@
-FROM --platform=linux/amd64 selenium/standalone-chrome:129.0-20240922
+FROM selenium/standalone-chrome:125.0-20240517
 
 RUN sudo apt-get update && \
-    sudo apt-get install -y openjdk-17-jdk && \
+    sudo apt-get install -y openjdk-17-jdk awscli && \
     sudo rm -rf /var/lib/apt/lists/*
 
 COPY . /test
