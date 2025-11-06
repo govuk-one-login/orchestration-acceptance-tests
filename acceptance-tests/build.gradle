@@ -23,7 +23,7 @@ dependencies {
                        "io.cucumber:cucumber-junit:${dependencyVersions.cucumber_version}",
                        "org.seleniumhq.selenium:selenium-java:${dependencyVersions.selenium_java_version}",
                        "org.junit.jupiter:junit-jupiter-api:${dependencyVersions.junit_version}",
-                       "commons-codec:commons-codec:1.18.0",
+                       "commons-codec:commons-codec:1.20.0",
                        "io.github.cdimascio:java-dotenv:5.2.2"
 
     testImplementation group: 'com.deque', name: 'axe-selenium', version:"${dependencyVersions.axe_version}"
