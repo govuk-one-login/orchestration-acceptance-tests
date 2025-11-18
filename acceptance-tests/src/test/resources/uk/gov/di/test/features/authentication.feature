@@ -1,4 +1,6 @@
+@QualityGateStackTest
 Feature: Authentication
+  @QualityGateRegressionTest
   Scenario: User successfully login without 2FA
     Given the user comes from the stub relying party with options: "2fa-off"
     Then the user is taken to the "Create your GOV.UK One Login or sign in" page
@@ -9,7 +11,8 @@ Feature: Authentication
     When the user enters their password
     Then the user is returned to the service
     And the user logs out
-  
+
+  @QualityGateRegressionTest
   Scenario: User is logged out on browser closed
     Given the user comes from the stub relying party with options: "2fa-off"
     Then the user is taken to the "Create your GOV.UK One Login or sign in" page
@@ -23,6 +26,7 @@ Feature: Authentication
     And the user comes from the stub relying party with options: "2fa-off"
     Then the user is taken to the "Create your GOV.UK One Login or sign in" page
 
+  @QualityGateRegressionTest
   Scenario: User is logged out when max-age enabled
     Given the user comes from the stub relying party with options: "2fa-off"
     Then the user is taken to the "Create your GOV.UK One Login or sign in" page
