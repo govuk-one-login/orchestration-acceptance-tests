@@ -48,7 +48,7 @@ public class BasePage {
             switch (SELENIUM_BROWSER) {
                 case CHROME_BROWSER:
                     ChromeOptions chromeOptions = new ChromeOptions();
-                    chromeOptions.setHeadless(SELENIUM_HEADLESS);
+                    chromeOptions.addArguments("--headless=new");
                     chromeOptions.addArguments("--remote-allow-origins=*");
                     chromeOptions.addArguments("--disable-gpu");
                     chromeOptions.addArguments("--disable-extensions");
@@ -63,7 +63,7 @@ public class BasePage {
                     break;
                 default:
                     FirefoxOptions firefoxOptions = new FirefoxOptions();
-                    firefoxOptions.setHeadless(SELENIUM_HEADLESS);
+                    firefoxOptions.addArguments("-headless");
                     firefoxOptions.setPageLoadTimeout(Duration.of(30, SECONDS));
                     firefoxOptions.setImplicitWaitTimeout(Duration.of(30, SECONDS));
                     if (SELENIUM_LOCAL) {
