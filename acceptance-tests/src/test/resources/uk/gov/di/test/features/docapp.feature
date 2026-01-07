@@ -1,4 +1,6 @@
+@QualityGateStackTest
 Feature: DocApp
+  @QualityGateRegressionTest
   Scenario: User completes a Doc app journey successfully
     When the user visits the doc app relying party
     And the user clicks the continue button
