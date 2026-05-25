@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:125.0-20240517
+FROM selenium/standalone-chrome:148.0-chromedriver-148.0-20260505
 
 RUN sudo apt-get update && \
     sudo apt-get install -y openjdk-17-jdk awscli && \
