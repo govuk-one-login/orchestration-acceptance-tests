@@ -9,6 +9,7 @@ Feature: Identity
     When the user enters their password
     Then the user is taken to the "Check your phone" page
     When the user enters the six digit security code from their phone
+    And the user skips passkey prompt if present
     Then the user is taken to the "IPV Stub Form" page
     When the user clicks the continue button
     Then the user is returned to the service with extended timeout
