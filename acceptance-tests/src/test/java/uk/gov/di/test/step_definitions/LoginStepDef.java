@@ -5,6 +5,7 @@ import io.cucumber.java.en.When;
 import uk.gov.di.test.pages.BasePage;
 import uk.gov.di.test.pages.CheckYourPhonePage;
 import uk.gov.di.test.pages.CreateOrSignInPage;
+import uk.gov.di.test.pages.CreatePasskeyPage;
 import uk.gov.di.test.pages.EnterYourEmailAddressToSignInPage;
 import uk.gov.di.test.pages.EnterYourPasswordPage;
 
@@ -14,6 +15,7 @@ public class LoginStepDef extends BasePage {
     public EnterYourEmailAddressToSignInPage enterYourEmailAddressToSignInPage =
             new EnterYourEmailAddressToSignInPage();
     public CreateOrSignInPage createOrSignInPage = new CreateOrSignInPage();
+    public CreatePasskeyPage createPasskeyPage = new CreatePasskeyPage();
 
     @When("the user selects sign in")
     public void theUserSelectsSignIn() throws InterruptedException {
@@ -34,5 +36,10 @@ public class LoginStepDef extends BasePage {
     @When("the user enters the six digit security code from their phone")
     public void theUserEntersTheirPhoneCode() {
         checkYourPhonePage.enterCodeAndContinue(System.getenv().get("TEST_USER_PHONE_OTP"));
+    }
+
+    @And("the user skips passkey prompt if present")
+    public void userSkipsPasskey() {
+        createPasskeyPage.skipPasskeyPrompt();
     }
 }
