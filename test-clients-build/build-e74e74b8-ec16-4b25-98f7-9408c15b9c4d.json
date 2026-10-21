@@ -1,0 +1,55 @@
+{
+ "ClientID": "e74e74b8-ec16-4b25-98f7-9408c15b9c4d",
+ "BackChannelLogoutUri": "https://acceptance-test-rp-build.build.stubs.account.gov.uk/backchannel-logout",
+ "ClientName": "scenario-3-acceptance-test",
+ "ClientSecret": "$argon2id$v=19$m=15360,t=2,p=1$VVVVOWVadmk1LzRtbGVXMEtvOXBNdm5XdmlQYVg2R1N1UGNvY0RKdm1zTTI1aTZRM3ZnclhlOEFtK2pQSGxzSkpwSlA0VEtZVlZpMGtWY1RoKzBidEE9PQ$6pYs1y4bkR9da9/Sqo4e8g",
+ "ClientType": "web",
+ "Contacts": [
+  "contact+relying-party-stub-build-acceptance-test@example.com"
+ ],
+ "CookieConsentShared": 1,
+ "IdentityVerificationSupported": 0,
+ "IdTokenSigningAlgorithm": "ES256",
+ "JarValidationRequired": false,
+ "MaxAgeEnabled": false,
+ "OneLoginService": false,
+ "PermitMissingNonce": true,
+ "PostLogoutRedirectUrls": [
+  "https://acceptance-test-rp-build.build.stubs.account.gov.uk/signed-out",
+  "http://localhost:8080/signed-out",
+  "https://rp-build.build.stubs.account.gov.uk/signed-out"
+ ],
+ "PublicKeySource": "STATIC",
+ "RedirectUrls": [
+  "https://acceptance-test-rp-build.build.stubs.account.gov.uk/oidc/authorization-code/callback",
+  "http://localhost:8080/oidc/authorization-code/callback",
+  "https://rp-build.build.stubs.account.gov.uk/oidc/authorization-code/callback"
+ ],
+ "Scopes": [
+  "openid",
+  "email",
+  "phone",
+  "wallet-subject-id",
+  "am"
+ ],
+ "SectorIdentifierUri": "https://acceptance-test-rp-build.build.stubs.account.gov.uk",
+ "ServiceType": "MANDATORY",
+ "SubjectType": "pairwise",
+ "TestClient": 1,
+ "TestClientEmailAllowlist": [
+  "^perftest\\w+@digital\\.cabinet-office\\.gov\\.uk$",
+  "^auth-test-user-[a-z][a-z]-[\\d]?[\\d]?[\\d]@digital\\.cabinet-office\\.gov\\.uk$",
+  "a@b.com",
+  "graham.osifo1@digital.cabinet-office.gov.uk",
+  "graham.auth.app@digital.cabinet-office.gov.uk",
+  "di-authentication-tech+varying-existing-user-journeys-account@digital.cabinet-office.gov.uk",
+  "^auth-test-user-pipeline-[\\d]?[\\d]?[\\d]@digital\\.cabinet-office\\.gov\\.uk$",
+  "^auth-test-user-local-[\\d]?[\\d]?[\\d]@digital\\.cabinet-office\\.gov\\.uk$",
+  "^auth-test-user-pipeline-[a-z][a-z]-[\\d]?[\\d]?[\\d]@digital\\.cabinet-office\\.gov\\.uk$",
+  "^test-user\\+[a-z]+-\\d+-\\d+@test\\.null\\.local$",
+  "^test-user\\+build-[\\w\\d-]+\\@test\\.null\\.local$",
+  "^test-user\\+build-\\d+-\\d+@test\\.null\\.local$",
+  "^orch-test-user\\d*@digital.cabinet-office.gov.uk$"
+ ],
+ "TokenAuthMethod": "client_secret_post"
+}
