@@ -1,4 +1,6 @@
+@QualityGateStackTest
 Feature: Logout
+  @QualityGateRegressionTest
   Scenario: User is logged out
     Given the user comes from the stub relying party with options: "2fa-off"
     Then the user is taken to the "Create your GOV.UK One Login or sign in" page
