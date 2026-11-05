@@ -1,6 +1,7 @@
 package uk.gov.di.test.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.Select;
 
 public class RpStubPage extends BasePage {
     public void goToRpStub() {
@@ -25,5 +26,12 @@ public class RpStubPage extends BasePage {
             }
         }
         findAndClickContinue();
+    }
+
+    public void selectRpAndContinue(String relyingPartyName) {
+        driver.findElement(By.linkText("Change Relying Party")).click();
+        waitForThisText("Select a Relying Party");
+        Select select = new Select(driver.findElement(By.id("relying-party")));
+        findAndClickButtonByText("Submit");
     }
 }

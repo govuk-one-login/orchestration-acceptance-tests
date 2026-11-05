@@ -22,4 +22,11 @@ public class RpStubStepDef extends BasePage {
         rpStubPage.selectRpOptionsByIdAndContinue(toggleOptions, valueOptions);
         setAnalyticsCookieTo(false);
     }
+
+    @When("the user comes from the stub relying party with client name {string}")
+    public void theRpRelyingParty(String relyingPartyName) {
+        rpStubPage.goToRpStub();
+        rpStubPage.selectRpAndContinue(relyingPartyName);
+        setAnalyticsCookieTo(false);
+    }
 }
