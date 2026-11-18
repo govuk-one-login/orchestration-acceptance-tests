@@ -1,5 +1,7 @@
 FROM selenium/standalone-chrome:125.0-20240517
 
+ENV JAVA_TOOL_OPTIONS="-XX:-UseBASE64Intrinsics"
+
 RUN sudo apt-get update && \
     sudo apt-get install -y openjdk-17-jdk awscli && \
     sudo rm -rf /var/lib/apt/lists/*
