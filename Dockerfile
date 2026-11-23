@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome:125.0-20240517
+FROM selenium/standalone-chrome:157.0-20261101
 
 ENV JAVA_TOOL_OPTIONS="-XX:-UseBASE64Intrinsics"
 
